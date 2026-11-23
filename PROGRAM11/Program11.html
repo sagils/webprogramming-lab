@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .quiz {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .option {
+            display: block;
+            margin: 6px 0;
+        }
+
+        #result {
+            font-size: 18px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="quiz">
+        <h1>Online Quiz</h1>
+
+        <section>
+            <h2>1. What is the brain of a computer?</h2>
+            <label class="option">
+                <input type="radio" name="q1" id="answer-q1"> CPU
+            </label>
+            <label class="option">
+                <input type="radio" name="q1"> Monitor
+            </label>
+            <label class="option">
+                <input type="radio" name="q1"> Keyboard
+            </label>
+            <label class="option">
+                <input type="radio" name="q1"> Mouse
+            </label>
+        </section>
+
+        <section>
+            <h2>2. Which device is used to type text?</h2>
+            <label class="option">
+                <input type="radio" name="q2"> Printer
+            </label>
+            <label class="option">
+                <input type="radio" name="q2" id="answer-q2"> Keyboard
+            </label>
+            <label class="option">
+                <input type="radio" name="q2"> Speaker
+            </label>
+            <label class="option">
+                <input type="radio" name="q2"> Scanner
+            </label>
+        </section>
+
+        <section>
+            <h2>3. What does CPU stand for?</h2>
+            <label class="option">
+                <input type="radio" name="q3"> Computer Personal Unit
+            </label>
+            <label class="option">
+                <input type="radio" name="q3" id="answer-q3"> Central Processing Unit
+            </label>
+            <label class="option">
+                <input type="radio" name="q3"> Central Program Utility
+            </label>
+            <label class="option">
+                <input type="radio" name="q3"> Computer Processing Utility
+            </label>
+        </section>
+
+        <button type="button" onclick="result()">Submit</button>
+        <p id="result">Score: 0 out of 3</p>
+    </main>
+
+    <script>
+        function result() {
+            let score = 0;
+
+            if (document.getElementById("answer-q1").checked) {
+                score++;
+            }
+            if (document.getElementById("answer-q2").checked) {
+                score++;
+            }
+            if (document.getElementById("answer-q3").checked) {
+                score++;
+            }
+
+            document.getElementById("result").textContent =
+                "Score: " + score + " out of 3";
+        }
+    </script>
+</body>
+
+</html>
